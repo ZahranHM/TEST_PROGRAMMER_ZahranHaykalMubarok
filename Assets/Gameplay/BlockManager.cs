@@ -13,10 +13,10 @@ public class BlockManager : MonoBehaviour
 
     void Start()
     {
-        UpdateBlockNow(nextBlocknumber);
+        UpdateBlockNow();
     }
 
-    void UpdateBlockNow(int nextBlocknumber)
+    void UpdateBlockNow()
     {
         if (blockTemplateList.Count == 0)
         {
@@ -24,7 +24,7 @@ public class BlockManager : MonoBehaviour
         }
         else
         {
-            blockNow = blockTemplateList[nextBlocknumber];
+            blockNow = blockTemplateList[Random.Range(0, blockTemplateList.Count)];
             theBlockManager.GetComponent<SpriteRenderer>().sprite = blockNow.GetComponent<SpriteRenderer>().sprite;
             manager.SendToGameManager(blockNow);
         }
@@ -32,15 +32,7 @@ public class BlockManager : MonoBehaviour
 
     public void NextBlock()
     {
-        nextBlocknumber = nextBlocknumber + 1;
-        if (nextBlocknumber < blockTemplateList.Count)
-        {
-            UpdateBlockNow(nextBlocknumber);
-        }
-        else if (nextBlocknumber == blockTemplateList.Count)
-        {
-            nextBlocknumber = 0;
-            UpdateBlockNow(nextBlocknumber);
-        }
+        UpdateBlockNow();
     }
+
 }

@@ -15,6 +15,7 @@ public class BoardManager : MonoBehaviour
     void Start()
     {
         RegisterGridNumber();
+        DangerZoningTest();
     }
 
     public void RegisterGridNumber()
@@ -44,6 +45,7 @@ public class BoardManager : MonoBehaviour
         if (grids[gridNumber].gridFull == 0)
         {
             FillGrid(gridNumber);
+            GridFillValidation(gridNumber);
             FillDoneProcess();
         }  
     }
@@ -55,10 +57,30 @@ public class BoardManager : MonoBehaviour
         grids[gridNumber].GridFilled();
     }
 
+    void GridFillValidation(int gridNumber)
+    {
+        int scoreSendToGameManager;
+        if (grids[gridNumber].dangerZoneGrid == 0)
+        {
+            scoreSendToGameManager = grids[gridNumber].blockInsideGrid.blockScore;
+            manager.ScoreAdding(scoreSendToGameManager);
+        }
+        else 
+        {
+            Debug.Log("ini harusnya bakal game over.");
+        }
+    }
+
     public void FillDoneProcess()
     {
         blockReadyToPut = null;
         manager.SignalToBlockManagerImDone();
+    }
+
+    public void DangerZoningTest()
+    {
+        int i = 1;
+        grids[27 - i].TurnToDangerZone();
     }
 
     void Update()

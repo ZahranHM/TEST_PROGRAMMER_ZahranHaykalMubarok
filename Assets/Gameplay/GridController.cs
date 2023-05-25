@@ -9,11 +9,8 @@ public class GridController : MonoBehaviour
     public BlockController blockInsideGrid;
     public int gridFull = 0;
     public int dangerZoneGrid = 0;
-
-    void Start()
-    {
-        
-    }
+    public Sprite emptySprite;
+    public Sprite dangerZoneSprite;
 
     public void GridFilled()
     {
@@ -27,6 +24,17 @@ public class GridController : MonoBehaviour
     public void OnMouseDown()
     {
         manager.GridClickedGiveOrder(gridNumber);
+    }
+
+    public void TurnToDangerZone()
+    {
+        DangerZoned();
+    }
+
+    void DangerZoned()
+    {
+        dangerZoneGrid = 1;
+        this.GetComponent<SpriteRenderer>().sprite = dangerZoneSprite;
     }
 
 }

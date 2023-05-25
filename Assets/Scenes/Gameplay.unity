@@ -148,19 +148,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.57567424
+      value: 0.71979636
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.6076592
+      value: 0.73952234
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.19
+      value: -0.12
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.35
+      value: -0.14
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.z
@@ -319,6 +319,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &17162283
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -345,6 +347,86 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &46972558
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 46972559}
+  - component: {fileID: 46972561}
+  - component: {fileID: 46972560}
+  m_Layer: 5
+  m_Name: ScoreText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &46972559
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46972558}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1831092146}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.45770794, y: 0.77045304}
+  m_AnchorMax: {x: 0.45770794, y: 0.77045304}
+  m_AnchoredPosition: {x: -32.672, y: 8.5}
+  m_SizeDelta: {x: 65.344, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &46972560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46972558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 100
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Score : '
+--- !u!222 &46972561
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 46972558}
+  m_CullTransparentMesh: 1
 --- !u!1 &54345847
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,6 +530,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &54345851
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -577,6 +661,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &127381491
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -706,6 +792,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &201295803
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -835,6 +923,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &273786611
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -964,6 +1054,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &341876616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1093,6 +1185,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &344182381
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1222,6 +1316,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &513876332
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1351,6 +1447,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &541987471
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1480,6 +1578,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &547268850
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1506,6 +1606,101 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &605229642
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 605229643}
+  - component: {fileID: 605229645}
+  - component: {fileID: 605229644}
+  - component: {fileID: 605229646}
+  m_Layer: 5
+  m_Name: ScoreNumber
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &605229643
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605229642}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1831092146}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.45770794, y: 0.77045304}
+  m_AnchorMax: {x: 0.45770794, y: 0.77045304}
+  m_AnchoredPosition: {x: 43.435806, y: 8.5}
+  m_SizeDelta: {x: 48.183502, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &605229644
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605229642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 100
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 0
+--- !u!222 &605229645
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605229642}
+  m_CullTransparentMesh: 1
+--- !u!114 &605229646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605229642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efacb96b4f3fc044ebee480cd0813b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 1332517181}
+  UIScore: {fileID: 605229644}
 --- !u!1 &606423926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1609,6 +1804,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &606423930
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1738,6 +1935,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &608838519
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1867,6 +2066,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &634022285
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1996,6 +2197,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &676686730
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2125,6 +2328,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &677899000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2254,6 +2459,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &699471763
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2561,6 +2768,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &723977254
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2690,6 +2899,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &800225141
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2819,6 +3030,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &801581824
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2948,6 +3161,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &897407260
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3077,6 +3292,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &941717465
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3206,6 +3423,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &954040024
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3257,11 +3476,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.28
+      value: -0.09000015
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.8
+      value: -0.06000012
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3354,7 +3573,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.86666673, g: 0.7411765, b: 0.5803922, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -3517,6 +3736,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &965535412
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3646,6 +3867,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1001075329
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3775,6 +3998,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1012022582
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3904,6 +4129,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1012631678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4033,6 +4260,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1034077088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4162,6 +4391,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1041660663
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4291,6 +4522,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1044898781
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4420,6 +4653,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1123301965
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4629,6 +4864,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1165860157
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4842,6 +5079,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1233273009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4893,11 +5132,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.28
+      value: -0.09000015
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.82
+      value: -0.05000013
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5056,6 +5295,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1318991446
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5185,6 +5426,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1323581272
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5242,6 +5485,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockManager: {fileID: 2017661618}
   boardManager: {fileID: 1371594219}
+  scoreController: {fileID: 605229646}
   tempBlock: {fileID: 0}
   score: 0
 --- !u!4 &1332517182
@@ -5257,7 +5501,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1361144726
 PrefabInstance:
@@ -5284,11 +5528,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.22
+      value: -0.07000017
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.08
+      value: -0.10000014
       objectReference: {fileID: 0}
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5428,7 +5672,7 @@ Transform:
   - {fileID: 1318991443}
   - {fileID: 344182378}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1371594219
 MonoBehaviour:
@@ -5602,6 +5846,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1446301121
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5731,6 +5977,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1446516712
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5860,6 +6108,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1480529896
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5989,6 +6239,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1506411875
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6118,6 +6370,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1557035082
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6247,6 +6501,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1577381685
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6376,6 +6632,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1586022435
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6505,6 +6763,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1599144368
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6634,6 +6894,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1649710536
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6897,6 +7159,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1673855030
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7026,6 +7290,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1721830807
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7269,6 +7535,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1794820915
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7295,6 +7563,108 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1831092142
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1831092146}
+  - component: {fileID: 1831092145}
+  - component: {fileID: 1831092144}
+  - component: {fileID: 1831092143}
+  m_Layer: 5
+  m_Name: ScoreCanvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1831092143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831092142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &1831092144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831092142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 0
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScreenMatchMode: 0
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &1831092145
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831092142}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &1831092146
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831092142}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 46972559}
+  - {fileID: 605229643}
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &1831109572
 GameObject:
   m_ObjectHideFlags: 0
@@ -7398,6 +7768,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1831109576
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7527,6 +7899,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1890465810
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7656,6 +8030,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1942028490
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7785,6 +8161,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1972180367
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7899,7 +8277,7 @@ Transform:
   - {fileID: 958337993}
   - {fileID: 713825790}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2017661618
 MonoBehaviour:
@@ -8091,6 +8469,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &2025365526
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8220,6 +8600,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &2066586506
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8349,6 +8731,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &2074268762
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8478,6 +8862,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
+  dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &2103575822
 BoxCollider2D:
   m_ObjectHideFlags: 0

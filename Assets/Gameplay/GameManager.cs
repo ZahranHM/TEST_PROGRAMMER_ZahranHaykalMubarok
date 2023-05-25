@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public BlockManager blockManager;
     public BoardManager boardManager;
+    public ScoreController scoreController;
     public BlockController tempBlock;
     public int score;
 
@@ -18,6 +19,12 @@ public class GameManager : MonoBehaviour
     {
         tempBlock = block;
         boardManager.blockReadyToPut = tempBlock;
+    }
+
+    public void ScoreAdding(int newAdditionalScore)
+    {
+        score = score + newAdditionalScore;
+        Debug.Log("Score = " + score);
     }
 
     public void SignalToBlockManagerImDone()

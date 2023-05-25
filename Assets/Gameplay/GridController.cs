@@ -6,7 +6,7 @@ public class GridController : MonoBehaviour
 {
     public BoardManager manager;
     public int gridNumber;
-    public GameObject blockInside;
+    public BlockController blockInsideGrid;
     public int gridFull = 0;
     public int dangerZoneGrid = 0;
 
@@ -19,13 +19,14 @@ public class GridController : MonoBehaviour
     {
         gridFull = 1;
     }
-    public void GridEmpty()
+    public void GridEmptied()
     {
         gridFull = 0;
     }
 
-    void Update()
+    public void OnMouseDown()
     {
-        
+        manager.GridClickedGiveOrder(gridNumber);
     }
+
 }

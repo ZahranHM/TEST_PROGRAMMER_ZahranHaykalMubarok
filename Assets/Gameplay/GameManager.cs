@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public BlockManager blockManager;
     public BoardManager boardManager;
-    public GameObject tempBlock;
+    public BlockController tempBlock;
     public int score;
 
     void Start()
@@ -14,11 +14,16 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void SendToGameManager(GameObject block)
+    public void SendToGameManager(BlockController block)
     {
         tempBlock = block;
-        boardManager.currentBlock = tempBlock;
-        boardManager.FillGrid();
+        boardManager.blockReadyToPut = tempBlock;
+    }
+
+    public void SignalToBlockManagerImDone()
+    {
+        tempBlock = null;
+        blockManager.NextBlock();
     }
 
     void Update()

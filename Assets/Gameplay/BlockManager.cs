@@ -5,17 +5,18 @@ using UnityEngine;
 public class BlockManager : MonoBehaviour
 {
     public GameObject theBlockManager;
-    public List<GameObject> blockTemplateList;
-    private GameObject blockNow;
+    public List<BlockController> blockTemplateList;
+    private BlockController blockNow;
+    private int nextBlocknumber = 0;
 
     public GameManager manager;
 
     void Start()
     {
-        UpdateBlockNow();
+        UpdateBlockNow(nextBlocknumber);
     }
 
-    void UpdateBlockNow()
+    void UpdateBlockNow(int nextBlocknumber)
     {
         if (blockTemplateList.Count == 0)
         {
@@ -23,10 +24,23 @@ public class BlockManager : MonoBehaviour
         }
         else
         {
-            blockNow = blockTemplateList[0];
+            blockNow = blockTemplateList[nextBlocknumber];
             theBlockManager.GetComponent<SpriteRenderer>().sprite = blockNow.GetComponent<SpriteRenderer>().sprite;
             manager.SendToGameManager(blockNow);
         }
     }
 
+    public void NextBlock()
+    {
+        nextBlocknumber = nextBlocknumber + 1;
+        if (nextBlocknumber < blockTemplateList.Count)
+        {
+            UpdateBlockNow(nextBlocknumber);
+        }
+        else if (nextBlocknumber == blockTemplateList.Count)
+        {
+            nextBlocknumber = 0;
+            UpdateBlockNow(nextBlocknumber);
+        }
+    }
 }

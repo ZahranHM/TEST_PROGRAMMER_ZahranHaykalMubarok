@@ -4,29 +4,61 @@ using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
+    private int MAX_X = 6;
+    private int MAX_Y = 9;
 
     public GameManager manager;
-    public List<GridController> grids;
-    public GameObject currentBlock;
+    public List<GridController> grids;  //Insert grids that want to participate from Unity
+    private List<List<GridController>> gridsPlacement;
+    public BlockController blockReadyToPut;
 
     void Start()
     {
-        RegisterGrid();
+        RegisterGridNumber();
     }
 
-    public void RegisterGrid()
+    public void RegisterGridNumber()
     {
-        grids[0].gridNumber = 0;
-    }
-
-    public void FillGrid()
-    {
-        if (grids[0].gridFull == 0)
+        for (int i = 0; i < grids.Count; i++)
         {
-            grids[0].blockInside = currentBlock;
-            grids[0].GetComponent<SpriteRenderer>().sprite = currentBlock.GetComponent<SpriteRenderer>().sprite;
-            grids[0].GridFilled();
+            grids[i].gridNumber = i+1;
         }
+    }
+
+    //under maintenance
+    public void RegisterGridPlacement(int i)
+    {
+        for (int x = 0; x < MAX_X; x++)
+        {
+            for (int y = 0; y < MAX_Y; y++)
+            {
+                gridsPlacement[x][y] = grids[i];
+            }
+        }
+        
+    }
+
+    public void GridClickedGiveOrder(int gridNumber)
+    {
+        gridNumber = gridNumber - 1;
+        if (grids[gridNumber].gridFull == 0)
+        {
+            FillGrid(gridNumber);
+            FillDoneProcess();
+        }  
+    }
+
+    public void FillGrid(int gridNumber)
+    {
+        grids[gridNumber].blockInsideGrid = blockReadyToPut;
+        grids[gridNumber].GetComponent<SpriteRenderer>().sprite = blockReadyToPut.GetComponent<SpriteRenderer>().sprite;
+        grids[gridNumber].GridFilled();
+    }
+
+    public void FillDoneProcess()
+    {
+        blockReadyToPut = null;
+        manager.SignalToBlockManagerImDone();
     }
 
     void Update()

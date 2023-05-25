@@ -7,7 +7,6 @@ public class BlockManager : MonoBehaviour
     public GameObject theBlockManager;
     public List<BlockController> blockTemplateList;
     private BlockController blockNow;
-    private int nextBlocknumber = 0;
 
     public GameManager manager;
 

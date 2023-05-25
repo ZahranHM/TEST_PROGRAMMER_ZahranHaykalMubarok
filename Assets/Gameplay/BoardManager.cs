@@ -22,7 +22,7 @@ public class BoardManager : MonoBehaviour
     {
         for (int i = 0; i < grids.Count; i++)
         {
-            grids[i].gridNumber = i+1;
+            grids[i].gridNumber = i+1;  //Grid register number start from 1
         }
     }
 
@@ -41,7 +41,8 @@ public class BoardManager : MonoBehaviour
 
     public void GridClickedGiveOrder(int gridNumber)
     {
-        gridNumber = gridNumber - 1;
+        gridNumber = gridNumber - 1;   //Change Grid register number into Grid sequence number
+
         if (grids[gridNumber].gridFull == 0)
         {
             FillGrid(gridNumber);
@@ -68,6 +69,7 @@ public class BoardManager : MonoBehaviour
         else 
         {
             Debug.Log("ini harusnya bakal game over.");
+            manager.GameOver();
         }
     }
 
@@ -81,6 +83,19 @@ public class BoardManager : MonoBehaviour
     {
         int i = 1;
         grids[27 - i].TurnToDangerZone();
+    }
+
+    public void GridClosing()
+    {
+        GridClose();
+    }
+
+    void GridClose()
+    {
+        for (int i = 0; i < grids.Count; i++)
+        {
+            grids[i].gridFull = 1;
+        }
     }
 
     void Update()

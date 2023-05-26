@@ -7,9 +7,9 @@ public class GameManager : MonoBehaviour
     public BlockManager blockManager;
     public BoardManager boardManager;
     public ScoreController scoreController;
+    public TimeManager timeManager;
     public GameOverController gameOverController;
     public GameObject gameOverCanvas;
-
     public BlockController tempBlock;
     public int score;
 
@@ -31,12 +31,17 @@ public class GameManager : MonoBehaviour
         blockManager.NextBlock();
     }
 
+    public void ResetTheTimer()
+    {
+        timeManager.ResetTimerPlease();
+    }
+
     public void GameOver()
     {
         gameOverCanvas.SetActive(true);
-        //gameOverController.finalScore.text = score.ToString();
         gameOverController.ShowScoreGameOver(score);
         boardManager.GridClosing();
+        timeManager.GameAlreadyOver();
     }
 
     void Update()

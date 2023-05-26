@@ -47,14 +47,14 @@ public class BoardManager : MonoBehaviour
         {
             FillGrid(gridNumber);
             GridFillValidation(gridNumber);
-            FillDoneProcess();
         }  
     }
 
     public void FillGrid(int gridNumber)
     {
         grids[gridNumber].blockInsideGrid = blockReadyToPut;
-        grids[gridNumber].GetComponent<SpriteRenderer>().sprite = blockReadyToPut.GetComponent<SpriteRenderer>().sprite;
+        grids[gridNumber].GetComponent<SpriteRenderer>().sprite = grids[gridNumber].blockInsideGrid.GetComponent<SpriteRenderer>().sprite;
+        blockReadyToPut = null;
         grids[gridNumber].GridFilled();
     }
 
@@ -65,17 +65,17 @@ public class BoardManager : MonoBehaviour
         {
             scoreSendToGameManager = grids[gridNumber].blockInsideGrid.blockScore;
             manager.ScoreAdding(scoreSendToGameManager);
+            FillDoneProcess();
         }
         else 
         {
-            Debug.Log("ini harusnya bakal game over.");
             manager.GameOver();
         }
     }
 
-    public void FillDoneProcess()
+    void FillDoneProcess()
     {
-        blockReadyToPut = null;
+        manager.ResetTheTimer();
         manager.SignalToBlockManagerImDone();
     }
 

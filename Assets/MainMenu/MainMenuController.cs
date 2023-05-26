@@ -10,11 +10,6 @@ public class MainMenuController : MonoBehaviour
         SceneManager.LoadScene("Gameplay");
     }
 
-    public void OpenHowToPlay()
-    {
-        SceneManager.LoadScene("HowToPlay");
-    }
-
     public void Exit()
     {
         Application.Quit();

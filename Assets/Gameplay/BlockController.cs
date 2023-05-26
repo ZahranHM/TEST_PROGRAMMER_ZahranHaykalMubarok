@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BlockController : MonoBehaviour
 {
+    public int blockId;
     public int blockScore;
 
 }

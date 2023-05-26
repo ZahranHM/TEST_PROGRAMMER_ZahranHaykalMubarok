@@ -6206,6 +6206,7 @@ MonoBehaviour:
   gameOverController: {fileID: 915533624}
   gameOverCanvas: {fileID: 915533619}
   tempBlock: {fileID: 0}
+  sameBlockCountToPop: 3
   score: 0
 --- !u!4 &1332517182
 Transform:

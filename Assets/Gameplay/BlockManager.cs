@@ -12,7 +12,17 @@ public class BlockManager : MonoBehaviour
 
     void Start()
     {
+        RegisterBlockId();
+        manager.BlockTypeCount(blockTemplateList.Count);
         UpdateBlockNow();
+    }
+
+    void RegisterBlockId()
+    {
+        for (int i = 0; i < blockTemplateList.Count; i++)
+        {
+            blockTemplateList[i].blockId = i;  //Block Id register
+        }
     }
 
     void UpdateBlockNow()

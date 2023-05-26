@@ -9,13 +9,17 @@ public class BoardManager : MonoBehaviour
 
     public GameManager manager;
     public List<GridController> grids;  //Insert grids that want to participate from Unity
-    private List<List<GridController>> gridsPlacement;
+    private List<List<GridController>> gridsPlacement;  //UNDER CONSTRUCTION
     public BlockController blockReadyToPut;
-
+    private int blockTypeCount;
+    private int sameBlockCountToPop;
+    private int[] BlockCountPerType = new int[4]; //HARDCODED, 4 types of block (bishop,rock,knight,dragon)
+    
     void Start()
     {
         RegisterGridNumber();
         DangerZoningTest();
+        
     }
 
     public void RegisterGridNumber()
@@ -26,7 +30,7 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    //under maintenance
+    //UNDER CONSTRUCTION
     public void RegisterGridPlacement(int i)
     {
         for (int x = 0; x < MAX_X; x++)
@@ -37,6 +41,16 @@ public class BoardManager : MonoBehaviour
             }
         }
         
+    }
+
+    public void BlockPopRequirement(int btc, int sbctp)
+    {
+        blockTypeCount = btc;
+        sameBlockCountToPop = sbctp;
+        for(int i=0; i<blockTypeCount; i++)
+        {
+            BlockCountPerType[i] = 0;
+        }
     }
 
     public void GridClickedGiveOrder(int gridNumber)
@@ -54,22 +68,41 @@ public class BoardManager : MonoBehaviour
     {
         grids[gridNumber].blockInsideGrid = blockReadyToPut;
         grids[gridNumber].GetComponent<SpriteRenderer>().sprite = grids[gridNumber].blockInsideGrid.GetComponent<SpriteRenderer>().sprite;
-        blockReadyToPut = null;
         grids[gridNumber].GridFilled();
     }
 
     void GridFillValidation(int gridNumber)
     {
-        int scoreSendToGameManager;
         if (grids[gridNumber].dangerZoneGrid == 0)
         {
-            scoreSendToGameManager = grids[gridNumber].blockInsideGrid.blockScore;
-            manager.ScoreAdding(scoreSendToGameManager);
+            int scoretosend = grids[gridNumber].blockInsideGrid.blockScore;
+            manager.ScoreAdding(scoretosend);
+            BlockCountPerType[grids[gridNumber].blockInsideGrid.blockId] += 1;
+            blockReadyToPut = null;
+            MoreThanTheresHoldToPop(grids[gridNumber].blockInsideGrid.blockId); //INI PIKIRIN
             FillDoneProcess();
         }
         else 
         {
             manager.GameOver();
+        }
+    }
+
+    void MoreThanTheresHoldToPop(int blockID)
+    {
+        if(BlockCountPerType[blockID] == sameBlockCountToPop)
+        {
+            for (int gridNum = 0; gridNum < grids.Count; gridNum++)  //looking in grid list
+            {
+                if (grids[gridNum].gridFull == 1)
+                {
+                    if (grids[gridNum].blockInsideGrid.blockId == blockID)
+                    {
+                        grids[gridNum].GridEmptied();
+                    }
+                }
+            }
+            BlockCountPerType[blockID] = 0;
         }
     }
 

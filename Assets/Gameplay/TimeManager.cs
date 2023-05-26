@@ -31,7 +31,7 @@ public class TimeManager : MonoBehaviour
         {
             timeReducer = Time.deltaTime;
             timeRemaining -= timeReducer;
-            Debug.Log(timeRemaining);
+            //Debug.Log(timeRemaining);
             IsNeedToSignalController();
             IsTimeOut();
         }

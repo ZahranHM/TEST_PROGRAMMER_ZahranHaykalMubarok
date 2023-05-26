@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public TimeManager timeManager;
     public GameOverController gameOverController;
     public GameObject gameOverCanvas;
+    public int sameBlockCountToPop;
     public BlockController tempBlock;
     public int score;
 
@@ -19,10 +20,15 @@ public class GameManager : MonoBehaviour
         boardManager.blockReadyToPut = tempBlock;
     }
 
+    public void BlockTypeCount(int blockTypeCount)
+    {
+        boardManager.BlockPopRequirement(blockTypeCount, sameBlockCountToPop);
+    }
+
     public void ScoreAdding(int newAdditionalScore)
     {
         score = score + newAdditionalScore;
-        Debug.Log("Score = " + score);
+        //Debug.Log("Score = " + score);
     }
 
     public void SignalToBlockManagerImDone()

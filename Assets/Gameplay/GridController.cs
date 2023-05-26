@@ -18,6 +18,8 @@ public class GridController : MonoBehaviour
     }
     public void GridEmptied()
     {
+        blockInsideGrid = null;
+        this.GetComponent<SpriteRenderer>().sprite = emptySprite;
         gridFull = 0;
     }
 

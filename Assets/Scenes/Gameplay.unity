@@ -319,6 +319,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &17162283
@@ -530,6 +532,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &54345851
@@ -661,6 +665,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &127381491
@@ -792,6 +798,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &201295803
@@ -1022,6 +1030,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &273786611
@@ -1233,6 +1243,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &341876616
@@ -1364,6 +1376,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &344182381
@@ -1495,6 +1509,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &513876332
@@ -1626,6 +1642,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &541987471
@@ -1757,6 +1775,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &547268850
@@ -2106,6 +2126,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &606423930
@@ -2237,6 +2259,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &608838519
@@ -2368,6 +2392,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &634022285
@@ -2499,6 +2525,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &676686730
@@ -2630,6 +2658,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &677899000
@@ -2761,6 +2791,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &699471763
@@ -3070,6 +3102,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &723977254
@@ -3201,6 +3235,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &800225141
@@ -3332,6 +3368,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &801581824
@@ -3543,6 +3581,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &897407260
@@ -3794,6 +3834,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &941717465
@@ -3925,6 +3967,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &954040024
@@ -4015,6 +4059,10 @@ PrefabInstance:
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378524080709626351, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
+      propertyPath: blockType
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7378524080709626351, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: blockScore
@@ -4238,6 +4286,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &965535412
@@ -4369,6 +4419,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1001075329
@@ -4500,6 +4552,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1012022582
@@ -4631,6 +4685,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1012631678
@@ -4762,6 +4818,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1034077088
@@ -4893,6 +4951,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1041660663
@@ -5024,6 +5084,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1044898781
@@ -5235,6 +5297,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1123301965
@@ -5580,6 +5644,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1165860157
@@ -5795,6 +5861,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1233273009
@@ -5885,6 +5953,10 @@ PrefabInstance:
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378524080709626351, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
+      propertyPath: blockType
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7378524080709626351, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: blockScore
@@ -6011,6 +6083,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1318991446
@@ -6142,6 +6216,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1323581272
@@ -6205,8 +6281,8 @@ MonoBehaviour:
   timeManager: {fileID: 600442775}
   gameOverController: {fileID: 915533624}
   gameOverCanvas: {fileID: 915533619}
-  tempBlock: {fileID: 0}
   sameBlockCountToPop: 3
+  tempBlock: {fileID: 0}
   score: 0
 --- !u!4 &1332517182
 Transform:
@@ -6285,6 +6361,10 @@ PrefabInstance:
     - target: {fileID: 6034804859776732978, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7378524080709626351, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
+      propertyPath: blockType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7378524080709626351, guid: 7f65f1c80069e494a985c09165a61987, type: 3}
       propertyPath: blockScore
@@ -6566,6 +6646,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1446301121
@@ -6697,6 +6779,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1446516712
@@ -6828,6 +6912,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1480529896
@@ -6959,6 +7045,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1506411875
@@ -7090,6 +7178,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1557035082
@@ -7221,6 +7311,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1577381685
@@ -7352,6 +7444,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1586022435
@@ -7483,6 +7577,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1599144368
@@ -7614,6 +7710,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1649710536
@@ -7879,6 +7977,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1673855030
@@ -8010,6 +8110,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1721830807
@@ -8335,6 +8437,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1794820915
@@ -8568,6 +8672,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1831109576
@@ -8699,6 +8805,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1890465810
@@ -8830,6 +8938,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1942028490
@@ -8961,6 +9071,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &1972180367
@@ -9269,6 +9381,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &2025365526
@@ -9400,6 +9514,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &2066586506
@@ -9531,6 +9647,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &2074268762
@@ -9662,6 +9780,8 @@ MonoBehaviour:
   blockInsideGrid: {fileID: 0}
   gridFull: 0
   dangerZoneGrid: 0
+  gridX: 0
+  gridY: 0
   emptySprite: {fileID: 21300000, guid: 2ae7847decdfc8448afeabb42ec5c760, type: 3}
   dangerZoneSprite: {fileID: 21300000, guid: 9a9b6487436ca1846843a2c2a8e96834, type: 3}
 --- !u!61 &2103575822

@@ -14,40 +14,45 @@ public class BoardManager : MonoBehaviour
     private int blockTypeCount;
     private int sameBlockCountToPop;
     private int[] BlockCountPerType = new int[4]; //HARDCODED, 4 types of block (bishop,rock,knight,dragon)
-    
+    private int someoneAttacked = 0;
+
     void Start()
     {
         RegisterGridNumber();
-        DangerZoningTest();
-        
+        RegisterGridXY(MAX_X, MAX_Y, grids.Count);
     }
 
     public void RegisterGridNumber()
     {
         for (int i = 0; i < grids.Count; i++)
         {
-            grids[i].gridNumber = i+1;  //Grid register number start from 1
+            grids[i].gridNumber = i; 
         }
     }
 
-    //UNDER CONSTRUCTION
-    public void RegisterGridPlacement(int i)
+    public void RegisterGridXY(int X, int Y, int gridsTotal)
     {
-        for (int x = 0; x < MAX_X; x++)
+        int i = 0;
+        int j, k;
+        while (i < gridsTotal)
         {
-            for (int y = 0; y < MAX_Y; y++)
+            for (j = 0; j < X; j++)
             {
-                gridsPlacement[x][y] = grids[i];
+                for (k = 0; k < Y; k++)
+                {
+                    grids[i].gridX = j;
+                    grids[i].gridY = k;
+                    i++;
+                }
             }
         }
-        
     }
 
     public void BlockPopRequirement(int btc, int sbctp)
     {
         blockTypeCount = btc;
         sameBlockCountToPop = sbctp;
-        for(int i=0; i<blockTypeCount; i++)
+        for (int i = 0; i < blockTypeCount; i++)
         {
             BlockCountPerType[i] = 0;
         }
@@ -55,13 +60,11 @@ public class BoardManager : MonoBehaviour
 
     public void GridClickedGiveOrder(int gridNumber)
     {
-        gridNumber = gridNumber - 1;   //Change Grid register number into Grid sequence number
-
         if (grids[gridNumber].gridFull == 0)
         {
             FillGrid(gridNumber);
-            GridFillValidation(gridNumber);
-        }  
+            IsItDangerZone(gridNumber); //validation 1
+        }
     }
 
     public void FillGrid(int gridNumber)
@@ -69,28 +72,50 @@ public class BoardManager : MonoBehaviour
         grids[gridNumber].blockInsideGrid = blockReadyToPut;
         grids[gridNumber].GetComponent<SpriteRenderer>().sprite = grids[gridNumber].blockInsideGrid.GetComponent<SpriteRenderer>().sprite;
         grids[gridNumber].GridFilled();
+        blockReadyToPut = null;
     }
 
-    void GridFillValidation(int gridNumber)
+    void IsItDangerZone(int gridNumber)
     {
-        if (grids[gridNumber].dangerZoneGrid == 0)
+        if (grids[gridNumber].dangerZoneStack == 0)
         {
-            int scoretosend = grids[gridNumber].blockInsideGrid.blockScore;
-            manager.ScoreAdding(scoretosend);
-            BlockCountPerType[grids[gridNumber].blockInsideGrid.blockId] += 1;
-            blockReadyToPut = null;
-            MoreThanTheresHoldToPop(grids[gridNumber].blockInsideGrid.blockId); //INI PIKIRIN
-            FillDoneProcess();
+            //validation 1 passed
+            DangerOrSafeZoningFromBlockType(0, gridNumber);
+            IsItNotAttackingAnyone(gridNumber); //validation 2
         }
-        else 
+        else
         {
             manager.GameOver();
         }
     }
 
+    public void IsItNotAttackingAnyone(int gridNumber)
+    {
+        if (someoneAttacked == 0)
+        {
+            //Validation 2 passed. All's safe.
+            //Give score
+            manager.ScoreAdding(grids[gridNumber].blockInsideGrid.blockScore);
+            //Count if any block type has already three in the board
+            BlockCountPerType[grids[gridNumber].blockInsideGrid.blockId] += 1;
+            MoreThanTheresHoldToPop(grids[gridNumber].blockInsideGrid.blockId);
+            //Ask timer to reset and ready to have another block
+            FillDoneProcess();
+        }
+        else
+        {
+            manager.GameOver();
+        }
+    }
+
+    public void ABlockAttacked()
+    {
+        someoneAttacked = 1;
+    }
+
     void MoreThanTheresHoldToPop(int blockID)
     {
-        if(BlockCountPerType[blockID] == sameBlockCountToPop)
+        if (BlockCountPerType[blockID] == sameBlockCountToPop)
         {
             for (int gridNum = 0; gridNum < grids.Count; gridNum++)  //looking in grid list
             {
@@ -98,6 +123,8 @@ public class BoardManager : MonoBehaviour
                 {
                     if (grids[gridNum].blockInsideGrid.blockId == blockID)
                     {
+                        //safezoning from block type cause
+                        DangerOrSafeZoningFromBlockType(1, gridNum);
                         grids[gridNum].GridEmptied();
                     }
                 }
@@ -110,12 +137,6 @@ public class BoardManager : MonoBehaviour
     {
         manager.ResetTheTimer();
         manager.SignalToBlockManagerImDone();
-    }
-
-    public void DangerZoningTest()
-    {
-        int i = 1;
-        grids[27 - i].TurnToDangerZone();
     }
 
     public void GridClosing()
@@ -131,8 +152,559 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    void Update()
+    void DangerOrSafeZoningFromBlockType(int dangerOrSafe,int gridNumber)
     {
-        
+        //for dangerOrSafe --> danger = 0, safe = 1;
+
+        int tempX = grids[gridNumber].gridX;
+        int tempY = grids[gridNumber].gridY;
+
+        if (grids[gridNumber].blockInsideGrid.blockType == 0)  //if the block is Bishop
+        {
+            //right up x-1 y+1
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX -= 1;
+            tempY += 1;
+            while (tempX >= 0 && tempY < MAX_Y)
+            {
+                for (int i=0; i<grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if(dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+                tempX -= 1;
+                tempY += 1;
+            }
+            //right down x+1 y+1
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX += 1;
+            tempY += 1;
+            while (tempX < MAX_X && tempY < MAX_Y)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+                tempX += 1;
+                tempY += 1;
+            }
+            //left down x+1 y-1
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX += 1;
+            tempY -= 1;
+            while (tempX < MAX_X && tempY >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+                tempX += 1;
+                tempY -= 1;
+            }
+            //left up x-1 y-1
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX -= 1;
+            tempY -= 1;
+            while (tempX >= 0 && tempY >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+                tempX -= 1;
+                tempY -= 1;
+            }
+
+        }
+        if (grids[gridNumber].blockInsideGrid.blockType == 1)  //if the block is Rock
+        {
+            //right x+0 y+1
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempY += 1;
+            while (tempY < MAX_Y)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+                tempY += 1;
+            }
+            //down x+1 y+0
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX += 1;
+            while (tempX < MAX_X)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+                tempX += 1;
+            }
+            //left x+0 y-1
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempY -= 1;
+            while (tempY >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+                tempY -= 1;
+            }
+            //up x-1 y+0
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX -= 1;
+            while (tempX >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+                tempX -= 1;
+            }
+        }
+        if (grids[gridNumber].blockInsideGrid.blockType == 2)  //if the block is Knight
+        {
+            //up right x-2 y+1 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX -= 2;
+            tempY += 1;
+            if (tempX >= 0 && tempY < MAX_Y)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //up right x-1 y+2 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX -= 1;
+            tempY += 2;
+            if (tempX >= 0 && tempY < MAX_Y)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //down right x+1 y+2 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX += 1;
+            tempY += 2;
+            if (tempX < MAX_X && tempY < MAX_Y)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //down right x+2 y+1 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX += 2;
+            tempY += 1;
+            if (tempX < MAX_X && tempY < MAX_Y)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //down left x+2 y-1 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX += 2;
+            tempY -= 1;
+            if (tempX < MAX_X && tempY >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //down left x+1 y-2 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX += 1;
+            tempY -= 2;
+            if (tempX < MAX_X && tempY >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //up left x-1 y-2 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX -= 1;
+            tempY -= 2;
+            if (tempX >= 0 && tempY >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //up left x-2 y-1 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX -= 2;
+            tempY -= 1;
+            if (tempX >= 0 && tempY >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+        }
+        if (grids[gridNumber].blockInsideGrid.blockType == 3)  //if the block is Dragon
+        {
+            //right up x-1 y+1 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX -= 1;
+            tempY += 1;
+            if (tempX >= 0 && tempY < MAX_Y)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //right down x+1 y+1 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX += 1;
+            tempY += 1;
+            if (tempX < MAX_X && tempY < MAX_Y)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //left down x+1 y-1 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX += 1;
+            tempY -= 1;
+            if (tempX < MAX_X && tempY >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //left up x-1 y-1 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX -= 1;
+            tempY -= 1;
+            if (tempX >= 0 && tempY >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //right x+0 y+1 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempY += 1;
+            if (tempY < MAX_Y)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //down x+1 y+0 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX += 1;
+            if (tempX < MAX_X)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //left x+0 y-1 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempY -= 1;
+            if (tempY >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+            //up x-1 y+0 just once
+            tempX = grids[gridNumber].gridX;
+            tempY = grids[gridNumber].gridY;
+            tempX -= 1;
+            if (tempX >= 0)
+            {
+                for (int i = 0; i < grids.Count; i++)
+                {
+                    if (grids[i].gridX == tempX && grids[i].gridY == tempY)
+                    {
+                        if (dangerOrSafe == 0)
+                        {
+                            grids[i].TurnToDangerZone();
+                        }
+                        else
+                        {
+                            grids[i].TurnToSafeZone();
+                        }
+                    }
+                }
+            }
+        }
+
     }
+
 }

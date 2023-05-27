@@ -8,4 +8,7 @@ obj/*
 *.sln 
 *.csproj 
 
-Build/*
+Assets/*
+Packages/*
+UserSettings/*
+ProjectSettings/*
